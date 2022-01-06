@@ -1,3 +1,33 @@
 quarkus:
+  # 打native包时是在镜像内执行的，这里设置镜像的可用内存，如果太小可能会因为镜像内存不够而OOM，进而打包失败
+  native:
+    native-image-xmx: 8000M
+
+  # web服务端口
   http:
     port: 9090
+
+  # OpenAPI 接口文档导出
+  smallrye-openapi:
+    enable: true
+    path: /swagger
+
+  # swagger
+  swagger-ui:
+    enable: true
+    path: /swagger-ui
+
+  # 响应式数据源
+  datasource:
+    db-kind: mysql
+    username: brozen
+    password: "159000"
+    reactive:
+      url: mysql://10.219.153.31:3306/flow_job?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+      max-size: 20
+
+  # Hibernate配置
+  hibernate-orm:
+    # 修改DB表字段命名格式，将下划线后的字母转为大写，即下划线转驼峰
+    physical-naming-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+
