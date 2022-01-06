@@ -1,4 +1,4 @@
-package top.brozen.quarkus.first.support.sqlclient.transform;
+package top.brozen.quarkus.first.support.transform.sqlclient;
 
 import io.vertx.mutiny.sqlclient.Row;
 import io.vertx.mutiny.sqlclient.RowSet;
@@ -9,10 +9,10 @@ import io.vertx.mutiny.sqlclient.RowSet;
  * @author Brozen
  * @since 2022-01-05
  */
-public class SimpleReflectionTransformer<T> extends ReflectionTransformer<T, T> {
+public class SimpleReflectionRowTransformer<T> extends ReflectionRowTransformer<T, T> {
 
 
-    public SimpleReflectionTransformer(Class<T> clazz) {
+    public SimpleReflectionRowTransformer(Class<T> clazz) {
         super(clazz);
     }
 

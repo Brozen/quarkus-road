@@ -1,4 +1,4 @@
-package top.brozen.quarkus.first.support.sqlclient.transform;
+package top.brozen.quarkus.first.support.transform.sqlclient;
 
 import io.smallrye.mutiny.Uni;
 import io.vertx.mutiny.sqlclient.Row;
@@ -12,10 +12,10 @@ import io.vertx.mutiny.sqlclient.SqlClient;
  * @author Brozen
  * @since 2022-01-05
  */
-public class UniReflectionTransformer<T> extends ReflectionTransformer<T, Uni<T>> implements UniTransformer<T> {
+public class UniReflectionRowTransformer<T> extends ReflectionRowTransformer<T, Uni<T>> implements UniRowTransformer<T> {
 
 
-    public UniReflectionTransformer(Class<T> clazz) {
+    public UniReflectionRowTransformer(Class<T> clazz) {
         super(clazz);
     }
 

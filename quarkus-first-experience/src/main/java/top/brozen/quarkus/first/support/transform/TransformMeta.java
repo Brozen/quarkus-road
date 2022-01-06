@@ -1,4 +1,4 @@
-package top.brozen.quarkus.first.support.sqlclient.transform;
+package top.brozen.quarkus.first.support.transform;
 
 import org.limbo.utils.strings.NamingCaseUtils;
 

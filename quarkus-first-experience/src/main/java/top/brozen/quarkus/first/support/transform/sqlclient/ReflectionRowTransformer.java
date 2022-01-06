@@ -1,10 +1,12 @@
-package top.brozen.quarkus.first.support.sqlclient.transform;
+package top.brozen.quarkus.first.support.transform.sqlclient;
 
 import io.vertx.mutiny.sqlclient.Row;
 import io.vertx.mutiny.sqlclient.RowSet;
 import io.vertx.mutiny.sqlclient.SqlClient;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.reflect.FieldUtils;
+import top.brozen.quarkus.first.support.transform.RowTransformer;
+import top.brozen.quarkus.first.support.transform.TransformMeta;
 
 import java.lang.reflect.Field;
 
@@ -15,7 +17,7 @@ import java.lang.reflect.Field;
  * @since 2022-01-05
  */
 @Slf4j
-public abstract class ReflectionTransformer<T, R> implements Transformer<R> {
+public abstract class ReflectionRowTransformer<T, R> implements RowTransformer<R> {
 
     /**
      * Bean类型的反射信息。
@@ -23,7 +25,7 @@ public abstract class ReflectionTransformer<T, R> implements Transformer<R> {
     private final TransformMeta<T> meta;
 
 
-    public ReflectionTransformer(Class<T> clazz) {
+    public ReflectionRowTransformer(Class<T> clazz) {
         this.meta = TransformMeta.parse(clazz);
     }
 

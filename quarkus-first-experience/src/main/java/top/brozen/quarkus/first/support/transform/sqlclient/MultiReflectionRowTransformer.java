@@ -1,4 +1,4 @@
-package top.brozen.quarkus.first.support.sqlclient.transform;
+package top.brozen.quarkus.first.support.transform.sqlclient;
 
 import io.smallrye.mutiny.Multi;
 import io.vertx.mutiny.sqlclient.Row;
@@ -13,10 +13,10 @@ import java.util.List;
  * @author Brozen
  * @since 2022-01-05
  */
-public class MultiReflectionTransformer<T> extends ReflectionTransformer<T, Multi<T>> implements MultiTransformer<T> {
+public class MultiReflectionRowTransformer<T> extends ReflectionRowTransformer<T, Multi<T>> implements MultiRowTransformer<T> {
 
 
-    public MultiReflectionTransformer(Class<T> clazz) {
+    public MultiReflectionRowTransformer(Class<T> clazz) {
         super(clazz);
     }
 
